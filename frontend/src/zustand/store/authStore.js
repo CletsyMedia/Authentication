@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const ApiUrl = "http://localhost:5000/api/auth/";
+const ApiUrl = import.meta.env.MODE === "development" ? "http://localhost:5000/api/auth/" : "/api/auth/";
 
 // To accept request and bypass cors
 axios.defaults.withCredentials = true;
