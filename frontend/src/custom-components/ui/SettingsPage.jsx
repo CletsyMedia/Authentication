@@ -72,23 +72,23 @@ const Settings = () => {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-gray-800 sm-max:p-4 md:p-6 rounded-lg shadow-sm mb-6">
+      <section className="bg-white dark:bg-gray-800 sm-max:p-6 md:p-6 rounded-lg shadow-sm mb-6">
         <h2 className="text-xl font-semibold mb-4 flex items-center">
           <Plus className="w-6 h-6 text-teal-500 mr-2" />
           Connected Accounts
         </h2>
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <img src={googleIcon} alt="Google" className="w-8 h-8" />
-              <span className="text-lg">Google</span>
+            <div className="flex items-center gap-4 sm-max:gap-1">
+              <img src={googleIcon} alt="Google" className="w-8 h-8 sm-max:size-6" />
+              <span className="text-lg sm-max:text-sm">Google</span>
             </div>
             <button className="btn btn-outline btn-sm sm-max:rounded-md">Connected</button>
           </div>
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <img src={facebookIcon} alt="Facebook" className="w-8 h-8" />
-              <span className="text-lg">Facebook</span>
+            <div className="flex items-center gap-4 sm-max:gap-1">
+              <img src={facebookIcon} alt="Facebook" className="w-8 h-8 sm-max:size-6" />
+              <span className="text-lg sm-max:text-sm">Facebook</span>
             </div>
             <button className="btn btn-outline btn-sm sm-max:rounded-md">Connected</button>
           </div>
