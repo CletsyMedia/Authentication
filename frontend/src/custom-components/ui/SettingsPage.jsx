@@ -10,7 +10,7 @@ const Settings = () => {
   const [twoFactorAuth, setTwoFactorAuth] = useState(false);
 
   return (
-    <main className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+    <main className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen px-1">
       <h1 className="text-xl md:text-2xl lg:text-4xl font-bold mb-4 md:mb-6 text-left">Settings</h1>
 
       <section className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm mb-6">

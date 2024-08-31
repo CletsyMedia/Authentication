@@ -20,7 +20,7 @@
 
 @media (min-width: 1024px) {
   .custom-padding {
-    @apply pl-64;
+    @apply pl-[17rem];
   }
 }
 
@@ -34,7 +34,7 @@
 }
 @media (max-width:378px) {
   .xsm-table{
-    width:285px;
+    width:288px;
   }
   .clock-hide{
     display:none;
