@@ -54,7 +54,7 @@ const DashHeader = () => {
   return (
     <>
       <header className="fixed right-0 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100 p-4 shadow-md w-full flex justify-between items-center z-30">
-        <div className="custom-padding sm-max:text-sm md:text-xl font-bold flex items-center gap-1">
+        <div className="custom-padding sm-max:pl-[3.3rem] sm-max:text-sm md:text-xl font-bold flex items-center gap-1">
           <p>{greeting}</p>
           <p className="clock-hide"> <Clock /></p>
         </div>
