@@ -6,7 +6,7 @@ import { getGreetings } from '../../utils/getGreeting';
 import ThemeToggler from './ThemeToggler';
 import Clock from './Clock';
 import ProfileDrawer from '../../custom-components/ui/ProfileDrawer';
-import { Bell } from 'lucide-react'; // Import the Bell icon
+import { Bell } from 'lucide-react';
 
 const DashHeader = () => {
   const { updateProfile, user } = useAuthStore();
@@ -58,8 +58,7 @@ const DashHeader = () => {
           <p>{greeting}</p>
           <p className="clock-hide"> <Clock /></p>
         </div>
-        <div className='flex items-center gap-4'> {/* Increased gap for better spacing */}
-          {/* Notification Bell Icon with Badge */}
+        <div className='flex items-center gap-2'> 
           <div className="relative">
             <button className="flex items-center justify-center p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
               <Bell className="w-6 h-6 text-gray-600 dark:text-gray-300" />
