@@ -25,9 +25,9 @@ const DashboardContent = () => {
   return (
     <main className="flex-1 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm min-h-full -z-50">
       <h2 className="text-xl md:text-2xl lg:text-4xl font-bold mb-4 md:mb-6 text-left">Dashboard Overview</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {/* Total Tasks Card */}
-        <div className="bg-gradient-to-r from-green-300 to-green-500 dark:from-green-800 dark:to-green-900 p-4 sm:p-6 rounded-xl shadow-lg flex items-center justify-between">
+        <div className="bg-gradient-to-r from-green-300 to-green-500 dark:from-green-800 dark:to-green-900 p-4 sm:p-6 rounded-xl shadow-sm flex items-center justify-between">
           <div>
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-3">Total Tasks</h3>
             <p className="text-xl sm:text-2xl md:text-3xl font-bold">5,678</p>
@@ -38,7 +38,7 @@ const DashboardContent = () => {
         </div>
 
         {/* Upcoming Deadlines Card */}
-        <div className="bg-gradient-to-r from-blue-300 to-blue-500 dark:from-blue-800 dark:to-blue-900 p-4 sm:p-6 rounded-xl shadow-lg flex items-center justify-between">
+        <div className="bg-gradient-to-r from-blue-300 to-blue-500 dark:from-blue-800 dark:to-blue-900 p-4 sm:p-6 rounded-xl shadow-sm flex items-center justify-between">
           <div>
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-3">Upcoming Deadlines</h3>
             <p className="text-xl sm:text-2xl md:text-3xl font-bold">12</p>
@@ -49,7 +49,7 @@ const DashboardContent = () => {
         </div>
 
         {/* Tasks Completed Card */}
-        <div className="bg-gradient-to-r from-yellow-300 to-yellow-500 dark:from-yellow-800 dark:to-yellow-900 p-4 sm:p-6 rounded-xl shadow-lg flex items-center justify-between">
+        <div className="bg-gradient-to-r from-yellow-300 to-yellow-500 dark:from-yellow-800 dark:to-yellow-900 p-4 sm:p-6 rounded-xl shadow-sm flex items-center justify-between">
           <div>
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-3">Tasks Completed</h3>
             <p className="text-xl sm:text-2xl md:text-3xl font-bold">45</p>

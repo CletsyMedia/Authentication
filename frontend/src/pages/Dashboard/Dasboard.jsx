@@ -15,9 +15,9 @@ const Dashboard = () => {
     <ThemeProvider>
       <div className='dashboard-container flex min-h-screen w-full'>
         <DashSidebar />
-        <div className="flex-1 flex flex-col custom-padding">
+        <div className="flex-1 flex flex-col custom-padding sm-max:pl-[3.8rem]">
           <DashHeader />
-          <main className="flex-1 p-4 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm mt-20">
+          <main className="flex-1 p-2 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm mt-20">
             <Routes>
               <Route path="/" element={<DashboardHome />} />
               <Route path="/analytics" element={<Analytics />} />

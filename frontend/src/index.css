@@ -9,7 +9,7 @@
 }
 
 .custom-padding {
-  @apply pl-14;
+  @apply pl-16;
 }
 
 @media (min-width: 768px) {
@@ -28,10 +28,13 @@
   .sm-table{
     width: 345px;
   }
+  .clock-hide{
+    display:none;
+  }
 }
 @media (max-width:378px) {
   .xsm-table{
-    width:288px;
+    width:285px;
   }
   .clock-hide{
     display:none;

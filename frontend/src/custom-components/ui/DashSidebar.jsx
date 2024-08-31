@@ -12,14 +12,14 @@ import {
 } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../../zustand/store/authStore';
-import ConfirmationModal from './ConfirmationModal'; // Ensure this path is correct
+import ConfirmationModal from './ConfirmationModal';
 
 const Sidebar = () => {
   const { logout } = useAuthStore();
   const navigate = useNavigate();
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false); // Default is closed for small and medium screens
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+  const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   const handleLogout = async () => {
     await logout();
@@ -35,7 +35,7 @@ const Sidebar = () => {
   return (
     <>
       <aside
-        className={`fixed bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100 min-h-screen shadow-md flex flex-col transition-all duration-300 ease-in-out z-40 ${
+        className={`fixed h-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100 shadow-md flex flex-col transition-all duration-300 ease-in-out z-40 ${
           isOpen 
             ? 'lg:w-64 md:w-64 sm:w-64 w-64'
             : 'lg:w-64 md:w-16 sm:w-16 w-16'
