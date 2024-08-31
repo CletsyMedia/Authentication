@@ -66,7 +66,7 @@ const AnalyticsPage = () => {
   };
 
   return (
-    <main className="flex-1 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm min-h-full px-1">
+    <main className="flex-1 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm min-h-full px-1 overflow-y-scroll">
       <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-left">Analytics Dashboard</h2>
 
       {/* Date Range Selector */}
