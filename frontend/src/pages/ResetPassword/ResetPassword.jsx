@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import Input from "../../components/ui/Input";
+import Input from "../../custom-components/ui/Input";
 import { Eye, EyeOff, Lock, Loader } from "lucide-react";
 import { useAuthStore } from "../../zustand/store/authStore";
 import toast from "react-hot-toast";

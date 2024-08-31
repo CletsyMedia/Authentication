@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import { motion } from "framer-motion";
-import Input from "../../components/ui/Input";
+import Input from "../../custom-components/ui/Input";
 import { Eye, EyeOff, Lock, Loader, Mail, User } from "lucide-react";
-import PasswordMeter from "../../components/ui/PasswordMeter";
+import PasswordMeter from "../../custom-components/ui/PasswordMeter";
 import { useAuthStore } from "../../zustand/store/authStore";
 
 const SignUpScreen = () => {

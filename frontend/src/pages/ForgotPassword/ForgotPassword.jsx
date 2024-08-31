@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Mail, Loader, MoveLeft } from "lucide-react";
 import { useAuthStore } from "../../zustand/store/authStore";
 import toast from "react-hot-toast";
-import Input from "../../components/ui/Input";
+import Input from "../../custom-components/ui/Input";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");

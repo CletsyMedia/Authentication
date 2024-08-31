@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
-import FloatingShape from "./components/ui/FloatingShape";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import FloatingShape from "./custom-components/ui/FloatingShape";
 import SignUpScreen from "./pages/SignUpScreen";
 import LoginScreen from "./pages/LoginScreen";
 import VerifyEmailOTP from "./pages/VerifyEmailOTP";
 import { Toaster } from "react-hot-toast";
 import { useAuthStore } from "./zustand/store/authStore";
 import Dashboard from "./pages/Dashboard";
-import LoadingSpinner from "./components/ui/LoadingSpinner";
+import LoadingSpinner from "./custom-components/ui/LoadingSpinner";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 
@@ -34,6 +34,7 @@ const ProtectedRoute = ({ children }) => {
 
 const App = () => {
   const { isCheckingAuth, checkAuth } = useAuthStore();
+  const location = useLocation();
 
   useEffect(() => {
     checkAuth();
@@ -48,38 +49,45 @@ const App = () => {
     );
   }
 
+  // Determine if the current route is the Dashboard route
+  const isDashboardRoute = location.pathname.startsWith('/dashboard');
+
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-green-900 to-emerald-900 flex items-center justify-center relative overflow-hidden">
-      <FloatingShape
-        color="bg-green-500"
-        size="w-64 h-64"
-        top="-5%"
-        left="10%"
-        delay={0}
-      />
-      <FloatingShape
-        color="bg-green-500"
-        size="w-48 h-48"
-        top="70%"
-        left="80%"
-        delay={5}
-      />
-      <FloatingShape
-        color="bg-green-500"
-        size="w-32 h-32"
-        top="40%"
-        left="10%"
-        delay={2}
-      />
+    <div
+      className={`min-h-screen w-full ${
+        isDashboardRoute
+          ? 'bg-white'
+          : 'bg-gradient-to-br from-gray-900 via-green-900 to-emerald-900'
+      } flex items-center justify-center relative overflow-hidden`}
+    >
+      {/* Render FloatingShape components only if not on the Dashboard */}
+      {!isDashboardRoute && (
+        <>
+          <FloatingShape
+            color="bg-green-500"
+            size="w-64 h-64"
+            top="-5%"
+            left="10%"
+            delay={0}
+          />
+          <FloatingShape
+            color="bg-green-500"
+            size="w-48 h-48"
+            top="70%"
+            left="80%"
+            delay={5}
+          />
+          <FloatingShape
+            color="bg-green-500"
+            size="w-32 h-32"
+            top="40%"
+            left="10%"
+            delay={2}
+          />
+        </>
+      )}
       <Routes>
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
+        {/* Public Routes */}
         <Route
           path="/signup"
           element={
@@ -113,13 +121,17 @@ const App = () => {
             </RedirectAuthUser>
           }
         />
-        {/* Catching all routes */}
+        {/* Dashboard Route */}
         <Route
-          path="*"
+          path="/dashboard/*"
           element={
-              <Navigate to="/" replace />
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
           }
         />
+        {/* Catch-all Route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Toaster position="top-right" />
     </div>

@@ -131,7 +131,7 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
     }
     .content {
       padding: 20px;
-      text-align: center;
+      text-align: left;
     }
     .content p {
       font-size: 16px;
@@ -175,7 +175,7 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
       <h1>Password Reset Request</h1>
     </div>
     <div class="content">
-      <p>Hi {{name}},</p>
+      <p>Hi,</p>
       <p>We received a request to reset your password. You can reset it by clicking the button below:</p>
       <a href="{{resetURL}}" class="button">Reset Your Password</a>
       <p>If you did not request a password reset, please ignore this email.</p>
@@ -225,7 +225,7 @@ export const PASSWORD_RESET_SUCCESS_TEMPLATE = `
     }
     .content {
       padding: 20px;
-      text-align: center;
+      text-align: left;
     }
     .content p {
       font-size: 16px;
@@ -248,7 +248,7 @@ export const PASSWORD_RESET_SUCCESS_TEMPLATE = `
       <h1>Password Reset Successful</h1>
     </div>
     <div class="content">
-      <p>Hi {{name}},</p>
+      <p>Hi,</p>
       <p>Your password has been successfully reset. You can now use your new password to log in to your account.</p>
       <p>If you did not request this change, please contact our support team immediately.</p>
     </div>

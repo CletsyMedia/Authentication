@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import Input from "../../components/ui/Input";
+import Input from "../../custom-components/ui/Input";
 import { Eye, EyeOff, Lock, Loader, Mail } from "lucide-react";
 import { useAuthStore } from "../../zustand/store/authStore";
 import toast from "react-hot-toast";
@@ -18,7 +18,7 @@ const LoginScreen = () => {
     e.preventDefault();
     try {
       await login(email, password);
-      navigate("/");
+      navigate("/dashboard");
       toast.success("Login successful");
     } catch (error) {
     }

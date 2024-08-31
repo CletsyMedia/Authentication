@@ -7,3 +7,39 @@
     @apply my-6 w-full py-[11px] px-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-md shadow-sm hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition duration-200;
   }
 }
+
+.custom-padding {
+  @apply pl-14;
+}
+
+@media (min-width: 768px) {
+  .custom-padding {
+    @apply pl-16;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-padding {
+    @apply pl-64;
+  }
+}
+
+@media (max-width: 430px) {
+  .sm-table{
+    width: 345px;
+  }
+}
+@media (max-width:378px) {
+  .xsm-table{
+    width:290px;
+  }
+  .clock-hide{
+    display:none;
+  }
+}
+@media (max-width:350px) {
+  .esm-table{
+    width:245px;
+  }
+}
+
