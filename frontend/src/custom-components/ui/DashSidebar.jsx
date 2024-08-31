@@ -35,7 +35,7 @@ const Sidebar = () => {
   return (
     <>
       <aside
-        className={`fixed min-h-dvh sm-max:fixed sm-max:top-0 sm-max:h-full sm-max:overflow-y-auto bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100 shadow-md flex flex-col transition-all duration-300 ease-in-out z-40 ${
+        className={`fixed min-h-dvh sm-max:fixed sm-max:top-0 sm-max:h-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100 shadow-md flex flex-col transition-all duration-300 ease-in-out z-40 ${
           isOpen 
             ? 'lg:w-64 md:w-64 sm:w-64 w-64'
             : 'lg:w-64 md:w-16 sm:w-16 w-16'
