@@ -68,11 +68,11 @@ const Settings = () => {
               onChange={() => setTwoFactorAuth(!twoFactorAuth)} 
             />
           </div>
-          <button className="btn btn-primary sm-max:p-2 mt-4 text-white">Change Password</button>
+          <button className="btn btn-primary sm-max:p-2 mt-4 text-white sm-max:btn-sm sm-max:rounded-md">Change Password</button>
         </div>
       </section>
 
-      <section className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm mb-6">
+      <section className="bg-white dark:bg-gray-800 sm-max:p-4 md:p-6 rounded-lg shadow-sm mb-6">
         <h2 className="text-xl font-semibold mb-4 flex items-center">
           <Plus className="w-6 h-6 text-teal-500 mr-2" />
           Connected Accounts
@@ -83,16 +83,16 @@ const Settings = () => {
               <img src={googleIcon} alt="Google" className="w-8 h-8" />
               <span className="text-lg">Google</span>
             </div>
-            <button className="btn btn-outline btn-sm">Connected</button>
+            <button className="btn btn-outline btn-sm sm-max:rounded-md">Connected</button>
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img src={facebookIcon} alt="Facebook" className="w-8 h-8" />
               <span className="text-lg">Facebook</span>
             </div>
-            <button className="btn btn-outline btn-sm">Connected</button>
+            <button className="btn btn-outline btn-sm sm-max:rounded-md">Connected</button>
           </div>
-          <button className="btn btn-outline w-full mt-4">Add Account</button>
+          <button className="btn btn-outline w-full mt-4 sm-max:btn-sm sm-max:rounded-md">Add Account</button>
         </div>
       </section>
 
@@ -102,7 +102,7 @@ const Settings = () => {
           Danger Zone
         </h2>
         <p className="mb-4">Permanently delete your account and all its content. This action cannot be undone.</p>
-        <button className="btn btn-error w-full">Delete Account</button>
+        <button className="btn btn-error w-full sm-max:btn-sm sm-max:rounded-md">Delete Account</button>
       </section>
     </main>
   );
