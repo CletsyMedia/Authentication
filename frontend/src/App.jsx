@@ -131,7 +131,7 @@ const App = () => {
           }
         />
         {/* Catch-all Route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
       <Toaster position="top-right" />
     </div>
