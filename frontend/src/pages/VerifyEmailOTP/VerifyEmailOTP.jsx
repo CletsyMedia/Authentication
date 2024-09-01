@@ -59,7 +59,7 @@ const VerifyEmailOTP = () => {
 
     try {
       await verifyEmail(otpValue);
-      navigate('/');
+      navigate('/login');
       toast.success("Email verified successfully");
     } catch (error) {
       toast.error(error.response?.data?.message || "Verification failed");
