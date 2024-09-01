@@ -54,11 +54,9 @@ A comprehensive user authentication system built with Node.js and React. This pr
   ```
 
 2. **Clone the Repository**
-   ```bash
-   git clone https://github.com/CletsyMedia/Authentication.git
+   ```bashgit clone https://github.com/CletsyMedia/Authentication.git
    cd Authentication
   ```
-
 
 3. **Configure Environment Variables**
     Create a .env file in the root directory and add the following:
