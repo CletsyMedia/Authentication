@@ -35,7 +35,7 @@ const Sidebar = () => {
   return (
     <>
       <aside
-        className={`fixed sm-max:h-50svh h-full top-0 left-0 transition-all duration-300 ease-in-out z-40 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100 shadow-md flex flex-col ${isOpen ? 'max-w-64 sm-max:max-w-[14rem]' : 'max-w-16'} lg:max-w-64 w-full`}
+        className={`fixed h-full sm-max:min-h-screen top-0 left-0 transition-all duration-300 ease-in-out z-40 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100 shadow-md flex flex-col ${isOpen ? 'max-w-64 sm-max:max-w-[14rem]' : 'max-w-16'} lg:max-w-64 w-full`}
       >
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -88,7 +88,7 @@ const Sidebar = () => {
             </ul>
           </nav>
         </div>
-        <div className="p-4 absolute bottom-0 w-full">
+        <div className="p-4">
           <button 
             className="flex items-center gap-2 w-full p-2 rounded hover:bg-gray-300 dark:hover:bg-gray-700 text-red-500"
             onClick={() => setIsModalOpen(true)}
