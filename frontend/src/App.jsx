@@ -10,7 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import LoadingSpinner from "./custom-components/ui/LoadingSpinner";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
-import { initializeGA } from "./utils/analytics";
+
 
 // RedirectAuthUser Component
 const RedirectAuthUser = ({ children }) => {
@@ -39,17 +39,37 @@ const App = () => {
 
   useEffect(() => {
     checkAuth();
-    initializeGA();
-    const handlePageView = () => {
-      if (window.gtag) {
-        window.gtag('config', import.meta.env.VITE_GA_TRACKING_ID, {
-          page_path: location.pathname,
-        });
-      }
-    };
-    handlePageView();
+  }, [checkAuth]);
 
-  }, [checkAuth, location.pathname]);
+  const trackingId = "G-TH95C9W57X";
+
+  useEffect(() => {
+    if (trackingId) {
+      // Dynamically load the gtag.js script
+      const script = document.createElement("script");
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
+      script.async = true;
+      document.head.appendChild(script);
+
+      script.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {
+          window.dataLayer.push(arguments);
+        };
+        window.gtag("js", new Date());
+        window.gtag("config", trackingId);
+      };
+    }
+  }, [trackingId]);
+
+  // Track page views whenever the route changes
+  useEffect(() => {
+    if (trackingId) {
+      window.gtag("config", trackingId, {
+        page_path: location.pathname + location.search,
+      });
+    }
+  }, [location, trackingId]);
 
   // Show loading or checking state while authentication status is being determined
   if (isCheckingAuth) {
