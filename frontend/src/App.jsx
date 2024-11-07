@@ -10,7 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import LoadingSpinner from "./custom-components/ui/LoadingSpinner";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
-
+import ReactGA from "react-ga";
 
 // RedirectAuthUser Component
 const RedirectAuthUser = ({ children }) => {
@@ -41,26 +41,11 @@ const App = () => {
     checkAuth();
   }, [checkAuth]);
 
-  const trackingId = "G-TH95C9W57X";
-
   useEffect(() => {
-    if (trackingId) {
-      // Dynamically load the gtag.js script
-      const script = document.createElement("script");
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
-      script.async = true;
-      document.head.appendChild(script);
-
-      script.onload = () => {
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function () {
-          window.dataLayer.push(arguments);
-        };
-        window.gtag("js", new Date());
-        window.gtag("config", trackingId);
-      };
-    }
-  }, [trackingId]);
+    ReactGA.initialize("G-TH95C9W57X");
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: "App.jsx" });
+  }, []);
+  // const trackingId = "G-TH95C9W57X";
 
   // Track page views whenever the route changes
   useEffect(() => {
@@ -81,14 +66,14 @@ const App = () => {
   }
 
   // Determine if the current route is the Dashboard route
-  const isDashboardRoute = location.pathname.startsWith('/dashboard');
+  const isDashboardRoute = location.pathname.startsWith("/dashboard");
 
   return (
     <div
       className={`min-h-screen w-full ${
         isDashboardRoute
-          ? 'bg-white'
-          : 'bg-gradient-to-br from-gray-900 via-green-900 to-emerald-900'
+          ? "bg-white"
+          : "bg-gradient-to-br from-gray-900 via-green-900 to-emerald-900"
       } flex items-center justify-center relative overflow-hidden`}
     >
       {/* Render FloatingShape components only if not on the Dashboard */}
