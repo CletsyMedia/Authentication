@@ -41,11 +41,14 @@ const App = () => {
     checkAuth();
   }, [checkAuth]);
 
-  useEffect(() => {
-    ReactGA.initialize("G-TH95C9W57X");
-    ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: "App.jsx" });
-  }, []);
-  // const trackingId = "G-TH95C9W57X";
+    useEffect(() => {
+      ReactGA.initialize("G-TH95C9W57X");
+    }, []);
+  
+    useEffect(() => {
+      ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
+    }, [location]);
+  
 
   // Track page views whenever the route changes
   useEffect(() => {
