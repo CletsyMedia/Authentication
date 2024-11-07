@@ -10,7 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import LoadingSpinner from "./custom-components/ui/LoadingSpinner";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
-
+import { initializeGA } from "./utils/analytics";
 
 // RedirectAuthUser Component
 const RedirectAuthUser = ({ children }) => {
@@ -39,6 +39,7 @@ const App = () => {
 
   useEffect(() => {
     checkAuth();
+    initializeGA();
   }, [checkAuth]);
 
   // Show loading or checking state while authentication status is being determined
