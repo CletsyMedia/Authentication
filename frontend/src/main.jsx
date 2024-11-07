@@ -5,7 +5,7 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import ReactGA from "react-ga4";
 
-ReactGA.initialize("G-TH95C9W57X");
+ReactGA.initialize.process.env.VITE_GA_TRACKING_ID;
 
 ReactGA.send({
   hitType: "pageview",
