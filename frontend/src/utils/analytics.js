@@ -6,7 +6,6 @@ export const initializeGA = () => {
     return;
   }
 
-  // Load the Google Analytics script only once
   if (!window.gtag) {
     const script = document.createElement('script');
     script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
@@ -20,5 +19,7 @@ export const initializeGA = () => {
       gtag('config', trackingId);
     };
     document.head.appendChild(script);
+  } else {
+    console.log('Google Analytics script already loaded.');
   }
 };

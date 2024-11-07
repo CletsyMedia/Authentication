@@ -40,21 +40,16 @@ const App = () => {
   useEffect(() => {
     checkAuth();
     initializeGA();
-  
-    const handleRouteChange = () => {
-      const path = location.pathname + location.search;
+    const handlePageView = () => {
       if (window.gtag) {
         window.gtag('config', import.meta.env.VITE_GA_TRACKING_ID, {
-          page_path: path,
+          page_path: location.pathname,
         });
       }
     };
-  
-    handleRouteChange();
-    return () => {
-      handleRouteChange();
-    };
-  }, [checkAuth, location]); 
+    handlePageView();
+
+  }, [checkAuth, location.pathname]);
 
   // Show loading or checking state while authentication status is being determined
   if (isCheckingAuth) {
