@@ -41,23 +41,6 @@ const App = () => {
     checkAuth();
   }, [checkAuth]);
 
-    useEffect(() => {
-      ReactGA.initialize("G-TH95C9W57X");
-    }, []);
-  
-    useEffect(() => {
-      ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
-    }, [location]);
-  
-
-  // Track page views whenever the route changes
-  useEffect(() => {
-    if (trackingId) {
-      window.gtag("config", trackingId, {
-        page_path: location.pathname + location.search,
-      });
-    }
-  }, [location, trackingId]);
 
   // Show loading or checking state while authentication status is being determined
   if (isCheckingAuth) {
