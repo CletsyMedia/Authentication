@@ -1,5 +1,5 @@
 export const initializeGA = () => {
-  const trackingId = import.meta.env.VITE_GA_TRACKING_ID;
+  const trackingId = "G-TH95C9W57X";
 
   if (!trackingId) {
     console.error('GA Tracking ID not found');

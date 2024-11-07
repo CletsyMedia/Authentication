@@ -33,6 +33,11 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
   });
 }
+// if (import.meta.env.MODE !== 'production') {
+//   console.log("Google Analytics is disabled in development mode.");
+//   return;
+// }
+
 
 app.listen(PORT, () => {
   connect2DB();
